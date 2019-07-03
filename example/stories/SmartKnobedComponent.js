@@ -14,18 +14,19 @@ const SmartKnobedComponent = props => (
       </tr>
     </thead>
     <tbody>
-      {Object.keys(props).map(prop => (
+      { Object.keys(props).map(prop => (
         <tr key={ prop }>
           <th>{ prop }</th>
           <td>{ SmartKnobedComponent.__docgenInfo.props[prop].type.name }</td>
           <td>{ typeof props[prop] === 'function' ? <i>function</i> : JSON.stringify(props[prop]) || '(empty)' }</td>
           <td>{ typeof props[prop] }</td>
         </tr>
-      ))}
+      )) }
     </tbody>
   </table>
 )
 
+/* eslint-disable react/no-unused-prop-types */
 SmartKnobedComponent.propTypes = {
   bool: PropTypes.bool,
   number: PropTypes.number,

@@ -8,8 +8,8 @@ const SmartKnobedComponentMissingProps = ({
 }) => (
   <code>
     <p>You should see a console.warn about a prop with default value bar.</p>
-    <p>{foo}</p>
-    <p>{bar}</p>
+    <p>{ foo }</p>
+    <p>{ bar }</p>
   </code>
 )
 
