@@ -1,10 +1,14 @@
 {
   "presets": [
-    
-    ["@babel/preset-env", {
-      "shippedProposals": true, "useBuiltIns": "usage"
-      }],
-      "@babel/preset-react",
-      "@babel/preset-flow"
+    [
+      "@babel/preset-env",
+      {
+        "shippedProposals": true,
+        "useBuiltIns": "usage",
+        "corejs": "3.0.0"
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-flow"
   ]
 }
