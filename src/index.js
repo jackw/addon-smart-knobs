@@ -43,10 +43,10 @@ const optionsReducer = (res, value) => ({ ...res, [value]: value })
 const withDefaultOption = (options) => ({ '': '--', ...options })
 const createSelect = (propName, elements, defaultProps) => {
   try {
-    const options = elements
     // Cleanup string quotes, if any.
-  .map(value => value.value.replace(/^'(.*)'$/, '$1'))
-  .reduce(optionsReducer, {})
+    const options = elements
+      .map(value => value.value.replace(/^'(.*)'$/, '$1'))
+      .reduce(optionsReducer, {})
     return select(propName, withDefaultOption(options), defaultProps[propName])
   }
   catch (e) { }
@@ -85,6 +85,7 @@ export const withSmartKnobs = (story, context) => {
 
     if (!item.type) {
       const defaultValue = item.defaultValue ? item.defaultValue.value : 'Unknown'
+      // eslint-disable-next-line no-console
       console.warn(`There is a prop with defaultValue ${defaultValue} but it wasnt specified on element.propTypes. Check story: "${context.kind}".`)
       return acc
     }
